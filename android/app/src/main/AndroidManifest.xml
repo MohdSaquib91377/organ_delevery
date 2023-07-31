@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.organ_delivery">
+    
    <application
         android:label="organ_delivery"
         android:name="${applicationName}"
@@ -30,5 +31,14 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+
+            <!-- Google MAp Api Key -->
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+                    android:value="AIzaSyArY_ccI1Xw-9BNc1GIxIVtyLnNj_vWTZE"/>
+
+                    
     </application>
+    
 </manifest>

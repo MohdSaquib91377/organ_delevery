@@ -18,25 +18,56 @@ class _CertificateScareenState extends State<CertificateScareen> {
         child: Scaffold(
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Text(
-            "Congratulations",
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-                color: AppColor.orangeColor),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              certificateCard("11km", AppImages.distence, "Distance Travelled"),
-              certificateCard("37m", AppImages.stop_watch, "Time taken")
-            ],
-          )
-        ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Congratulations",
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  color: AppColor.orangeColor),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                certificateCard(
+                    "11km", AppImages.distence, "Distance Travelled"),
+                certificateCard("37m", AppImages.stop_watch, "Time taken")
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Image.asset(AppImages.certificate),
+            SizedBox(
+              height: 50,
+            ),
+            InkWell(
+              onTap: () {
+                print("Download button vlicked !!");
+              },
+              child: Container(
+                alignment: Alignment.center,
+                width: double.infinity,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(9),
+                    color: AppColor.orangeColor),
+                child: Text(
+                  "Download",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     ));
   }
@@ -44,15 +75,17 @@ class _CertificateScareenState extends State<CertificateScareen> {
 
 Widget certificateCard(String meters, String icon, String text) {
   return Container(
-    width: 160,
+    padding: EdgeInsets.all(5),
+    width: 170,
     height: 80,
     decoration: BoxDecoration(
-        color: AppColor.lightOrange, borderRadius: BorderRadius.circular(5)),
+        color: AppColor.orangethikness, borderRadius: BorderRadius.circular(5)),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               meters.toString(),
@@ -71,7 +104,7 @@ Widget certificateCard(String meters, String icon, String text) {
         Text(
           text.toString(),
           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-        )
+        ),
       ],
     ),
   );

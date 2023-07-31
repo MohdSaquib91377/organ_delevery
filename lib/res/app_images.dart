@@ -10,4 +10,8 @@ class AppImages {
   static String profile = 'assets/images/app/profile.png';
   static String distence = 'assets/images/app/distence.png';
   static String stop_watch = 'assets/images/app/stop_watch.png';
+  static String certificate = 'assets/images/app/certificate.png';
+  static String current_location = 'assets/images/app/current_location.png';
+  static String green_location = 'assets/images/app/green_location.png';
+  static String heart = 'assets/images/app/heart.png';
 }
