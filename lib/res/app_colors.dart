@@ -9,4 +9,5 @@ class AppColor {
   static Color green = Color(0XFF1BC100);
   static Color lightOrange = Color(0XFFFF6969);
   static Color orangethikness = Color(0XFFFFb6b6);
+  static Color whitethick = Color(0xFFFFFBFB);
 }

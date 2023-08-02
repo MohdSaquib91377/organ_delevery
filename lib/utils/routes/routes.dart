@@ -7,6 +7,7 @@ import 'package:organ_delivery/view/login_screen.dart';
 import 'package:organ_delivery/view/register_screen.dart';
 
 import '../../main.dart';
+import '../../view/timer_screen.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -23,6 +24,13 @@ class Routes {
         return MaterialPageRoute(builder: (context) => CertificateScareen());
       case RoutesName.main:
         return MaterialPageRoute(builder: (context) => MyHomePage());
+      case RoutesName.timer:
+        final args = settings.arguments as Map<String, double>;
+        return MaterialPageRoute(
+            builder: (context) => TimerScreen(
+                  latitude: args["latitude"] ?? 0.0,
+                  longitude: args["longitude"] ?? 0.0,
+                ));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(body: Text("No routes Found !!")));

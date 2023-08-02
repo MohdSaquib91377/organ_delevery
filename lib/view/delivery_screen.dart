@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:organ_delivery/res/app_colors.dart';
 import 'package:organ_delivery/utils/routes/routes_name.dart';
+import 'package:organ_delivery/view/certificate_screen.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({super.key});
@@ -38,7 +39,13 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, RoutesName.certificate);
+                    // Navigator.pushNamed(context, RoutesName.certificate);
+                    // Navigator.push(context, MaterialPageRoute(builder: (context){
+                    //   return CertificateScareen();
+                    // }));
+
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed(RoutesName.certificate);
                   },
                   child: Container(
                     height: 86,
